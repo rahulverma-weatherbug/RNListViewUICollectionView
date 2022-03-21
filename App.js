@@ -31,27 +31,22 @@ const data = [];
 for (let i=0; i<ROWS_IN_DATA_SOURCE; i++) data.push(`This is ios row # ${i+1}`);
 
 const App = ()=> {
-
   return (
-          <View style={styles.container}>
+          <View >
             
-              <CustomListView 
-                  style={{ width: 400, height: 100 }} 
+              <CustomListView  
                   data = {data}
               />
           </View>
         );
     
-    
 }
-
- 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#F5FCFF',
+      backgroundColor: '#F5FCFC',
     }
 });
 

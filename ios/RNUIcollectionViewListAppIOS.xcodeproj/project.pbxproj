@@ -13,7 +13,9 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		1854DD3027D7AEBE003F18D4 /* CustomListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1854DD2F27D7AEBE003F18D4 /* CustomListView.swift */; };
 		1854DD3327D7AEF1003F18D4 /* CustomListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1854DD3227D7AEF1003F18D4 /* CustomListView.m */; };
+		1863CC3427E8C25100525995 /* CustomListViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1863CC3327E8C25100525995 /* CustomListViewVC.swift */; };
 		18ACAF6527DF17D500A79390 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACAF6427DF17D500A79390 /* CustomCollectionViewCell.swift */; };
+		18ACAF6F27E2046000A79390 /* MyCustomViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18ACAF6E27E2046000A79390 /* MyCustomViewManager.swift */; };
 		25758CA4ECF9800058870B51 /* libPods-RNUIcollectionViewListAppIOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C850A55BABB2FD919DD672B6 /* libPods-RNUIcollectionViewListAppIOS.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
@@ -54,7 +56,9 @@
 		1854DD2E27D7AEBE003F18D4 /* RNUIcollectionViewListAppIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNUIcollectionViewListAppIOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		1854DD2F27D7AEBE003F18D4 /* CustomListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListView.swift; sourceTree = "<group>"; };
 		1854DD3227D7AEF1003F18D4 /* CustomListView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomListView.m; sourceTree = "<group>"; };
+		1863CC3327E8C25100525995 /* CustomListViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomListViewVC.swift; sourceTree = "<group>"; };
 		18ACAF6427DF17D500A79390 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
+		18ACAF6E27E2046000A79390 /* MyCustomViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomViewManager.swift; sourceTree = "<group>"; };
 		1907634BF24F67848527DF27 /* Pods-RNUIcollectionViewListAppIOS-RNUIcollectionViewListAppIOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUIcollectionViewListAppIOS-RNUIcollectionViewListAppIOSTests.debug.xcconfig"; path = "Target Support Files/Pods-RNUIcollectionViewListAppIOS-RNUIcollectionViewListAppIOSTests/Pods-RNUIcollectionViewListAppIOS-RNUIcollectionViewListAppIOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		23E423B6B58E6234D9D52A7B /* Pods-RNUIcollectionViewListAppIOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNUIcollectionViewListAppIOS.release.xcconfig"; path = "Target Support Files/Pods-RNUIcollectionViewListAppIOS/Pods-RNUIcollectionViewListAppIOS.release.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* RNUIcollectionViewListAppIOS-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RNUIcollectionViewListAppIOS-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -133,6 +137,8 @@
 				1854DD2E27D7AEBE003F18D4 /* RNUIcollectionViewListAppIOS-Bridging-Header.h */,
 				1854DD3227D7AEF1003F18D4 /* CustomListView.m */,
 				18ACAF6427DF17D500A79390 /* CustomCollectionViewCell.swift */,
+				18ACAF6E27E2046000A79390 /* MyCustomViewManager.swift */,
+				1863CC3327E8C25100525995 /* CustomListViewVC.swift */,
 			);
 			name = RNUIcollectionViewListAppIOS;
 			sourceTree = "<group>";
@@ -555,10 +561,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				18ACAF6F27E2046000A79390 /* MyCustomViewManager.swift in Sources */,
 				18ACAF6527DF17D500A79390 /* CustomCollectionViewCell.swift in Sources */,
 				1854DD3327D7AEF1003F18D4 /* CustomListView.m in Sources */,
 				1854DD3027D7AEBE003F18D4 /* CustomListView.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				1863CC3427E8C25100525995 /* CustomListViewVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

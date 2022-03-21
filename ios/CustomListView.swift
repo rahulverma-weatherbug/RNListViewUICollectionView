@@ -7,54 +7,60 @@
 
 import UIKit
 
-class CustomListView : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate{
-
-  @objc var data : [String] = data
+class CustomListView: UIView {
   
-  private var collectionView: UICollectionView?
-
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    let layout = UICollectionViewFlowLayout()
-    layout.scrollDirection = .vertical
-    layout.itemSize = CGSize(width: view.frame.size.width/3, height: view.frame.size.width/3)
-
-    collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-    guard let collectionView = collectionView else {
+  weak var listViewVC: CustomListViewVC?
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
+  }
+  
+//  let names = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+  
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    if listViewVC == nil {
+      embed()
+    }
+    else{
+      listViewVC?.view.frame = bounds
+    }
+  }
+  
+  private func embed(){
+    guard let parentVC = parentViewController else{
       return
     }
-    collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
-    collectionView.dataSource = self
-    collectionView.delegate = self
-    view.addSubview(collectionView)
-    collectionView.frame = view.bounds
-
+    
+    let vc = CustomListViewVC.
+    parentVC.addChild(vc)
+    addSubview(vc.view)
+    vc.view.frame = bounds
+    
+    self.listViewVC = vc
+    
+    
   }
-
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return data.count
-  }
-
-  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
-    //cell.configure(label: "Custom\(indexPath.row)")
-    cell.configure(label: data[indexPath.row])
-    return cell
-  }
-
 }
 
-@objc (RCTMyCustomViewManager)
-class RCTMyCustomViewManager: RCTViewManager {
-
-  override static func requiresMainQueueSetup() -> Bool {
-    return true
-  }
-
-  func view() -> UIViewController! {
-    return CustomListView()
-  }
-
+extension UIView {
+    var parentViewController: UIViewController? {
+        var parentResponder: UIResponder? = self
+        while parentResponder != nil {
+            parentResponder = parentResponder!.next
+            if let viewController = parentResponder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
 }
+
+
+
 
 
