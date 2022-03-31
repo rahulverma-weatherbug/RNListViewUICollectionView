@@ -9,7 +9,7 @@ class CustomListView extends React.PureComponent {
 
         return (
         <RCTCustomListView 
-            //data = {data}
+            data = {data}
         />
         )
     }

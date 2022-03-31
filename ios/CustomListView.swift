@@ -11,6 +11,8 @@ class CustomListView: UIView {
   
   weak var listViewVC: CustomListViewVC?
   
+  @objc var data: [String] = []
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
   }
@@ -31,16 +33,24 @@ class CustomListView: UIView {
     }
   }
   
-  private func embed(){
+   private func embed(){
     guard let parentVC = parentViewController else{
       return
     }
     
-    let vc = CustomListViewVC.
+    var dataEntry: [String] = []
+    
+    for i in 0..<data.count{
+      dataEntry.append(data[i])
+      print(dataEntry)
+    }
+    
+    
+    let vc = CustomListViewVC.init()
     parentVC.addChild(vc)
     addSubview(vc.view)
     vc.view.frame = bounds
-    
+    vc.names = dataEntry
     self.listViewVC = vc
     
     
