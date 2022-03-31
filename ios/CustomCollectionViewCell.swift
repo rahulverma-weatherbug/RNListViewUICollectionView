@@ -30,7 +30,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
   override func layoutSubviews() {
     super.layoutSubviews()
 
-    myLabel.frame = CGRect(x: contentView.frame.size.width/2, y: contentView.frame.size.height-150, width: contentView.frame.size.width-10, height: 50)
+    myLabel.frame = CGRect(x: contentView.frame.size.width-275, y: contentView.frame.size.height-150, width: contentView.frame.size.width-10, height: 50)
   }
 
   public func configure(label : String){

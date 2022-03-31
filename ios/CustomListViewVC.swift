@@ -10,8 +10,8 @@ import UIKit
 class CustomListViewVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
     private var collectionView: UICollectionView?
-
-    let names = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+  
+    var names:[String] = []
   
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -35,13 +35,12 @@ class CustomListViewVC: UIViewController, UICollectionViewDataSource, UICollecti
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
       return names.count
-      //return data.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
       let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CustomCollectionViewCell.identifier, for: indexPath) as! CustomCollectionViewCell
       cell.configure(label: names[indexPath.row])
-      //cell.configure(label: data[indexPath.row])
+
       return cell
     }
   

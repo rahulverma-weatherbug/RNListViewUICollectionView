@@ -13,12 +13,12 @@ class CustomListView: UIView {
   
   @objc var data: [String] = []
   
+  var names:[String] = []
+  
   override init(frame: CGRect) {
     super.init(frame: frame)
   }
-  
-//  let names = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-  
+    
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
@@ -37,12 +37,20 @@ class CustomListView: UIView {
     guard let parentVC = parentViewController else{
       return
     }
+     
+     var dataEntry: [String] = []
+         
+     for i in 0..<data.count{
+        dataEntry.append(data[i])
+        print(dataEntry)
+     }
     
     
     let vc = CustomListViewVC.init()
     parentVC.addChild(vc)
     addSubview(vc.view)
     vc.view.frame = bounds
+    vc.names = dataEntry
     self.listViewVC = vc
     
     
