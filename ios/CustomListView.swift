@@ -38,19 +38,11 @@ class CustomListView: UIView {
       return
     }
     
-    var dataEntry: [String] = []
-    
-    for i in 0..<data.count{
-      dataEntry.append(data[i])
-      print(dataEntry)
-    }
-    
     
     let vc = CustomListViewVC.init()
     parentVC.addChild(vc)
     addSubview(vc.view)
     vc.view.frame = bounds
-    vc.names = dataEntry
     self.listViewVC = vc
     
     
